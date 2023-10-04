@@ -8,14 +8,18 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class DriverFactory {
     private static WebDriver driver;
 
-    public DriverFactory() {
+    private DriverFactory() {
     }
 
     public static WebDriver getDriver() {
         if (driver == null) {
             switch (Propriedades.browser){
-                case FIREFOX: driver = new FirefoxDriver(); break;
+                case FIREFOX:
+                    System.setProperty("webdriver.gecko.driver",".\\src\\main\\resources\\Drivers\\geckodriver.exe");
+                    driver = new FirefoxDriver();
+                    break;
                 case CHROME:
+                    System.setProperty("webdriver.chrome.driver",".\\src\\main\\resources\\Drivers\\chromedriver.exe");
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--remote-allow-origins=*");
                     driver = new ChromeDriver(options);

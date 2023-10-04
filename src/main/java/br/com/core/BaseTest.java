@@ -29,6 +29,5 @@ public class BaseTest {
     @AfterAll
     public static void killDriverParaCadaClasse(){
         if(!Propriedades.FECHAR_BROWSER_POR_TESTE) killDriver();
-        System.out.println("Entrou no método");
     }
 }

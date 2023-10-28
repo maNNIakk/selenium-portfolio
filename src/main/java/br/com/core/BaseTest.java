@@ -1,19 +1,42 @@
 package br.com.core;
 
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import org.apache.commons.io.FileUtils;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.TestInfo;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import static br.com.core.DriverFactory.getDriver;
 import static br.com.core.DriverFactory.killDriver;
 
 public class BaseTest {
+    protected static JsonObject jsonObject;
+    protected static CustomCommands cmd;
+    @BeforeAll
+    public static void setupAll(){
+         cmd = new CustomCommands();
+
+        try {
+            String jsonFilePath = Propriedades.BASE_DATA_PATH;
+            String jsonContent = Files.readString(Paths.get(jsonFilePath));
+            jsonObject = JsonParser.parseString(jsonContent).getAsJsonObject();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        if(!Propriedades.BROWSER_POR_TESTE) getDriver().get(Propriedades.BASE_URL);
+
+    }
+
+    @BeforeEach
+    public void setupEach(){
+        if(Propriedades.BROWSER_POR_TESTE) getDriver().get(Propriedades.BASE_URL);
+    }
 
 
 
@@ -22,12 +45,12 @@ public class BaseTest {
         TakesScreenshot ss = (TakesScreenshot) getDriver();
         File arquivo = ss.getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(arquivo, new File("target" + File.separator + "screenshot" + File.separator + testInfo.getDisplayName() + ".jpg"));
-        if(Propriedades.FECHAR_BROWSER_POR_TESTE) killDriver();
+        if(Propriedades.BROWSER_POR_TESTE) killDriver();
 
     }
 
     @AfterAll
     public static void killDriverParaCadaClasse(){
-        if(!Propriedades.FECHAR_BROWSER_POR_TESTE) killDriver();
+        if(!Propriedades.BROWSER_POR_TESTE) killDriver();
     }
 }

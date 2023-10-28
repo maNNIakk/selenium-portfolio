@@ -70,11 +70,11 @@ public class BasePage {
         return combo.getFirstSelectedOption().getText();
     }
 
-    public List<String> obterValoresCombo(String id) {
+    public List<String> obterValoresCombo() {
         WebElement element = getDriver().findElement(By.id("elementosForm:esportes"));
         Select combo = new Select(element);
         List<WebElement> allSelectedOptions = combo.getAllSelectedOptions();
-        List<String> valores = new ArrayList<String>();
+        List<String> valores = new ArrayList<>();
         for(WebElement opcao: allSelectedOptions) {
             valores.add(opcao.getText());
         }
@@ -107,10 +107,10 @@ public class BasePage {
 
     /********* Botao ************/
 
-    public void clicarBotao(String id) {
-        getDriver().findElement(By.id(id)).click();
+    public void clicarBotao(By selector) {
+        getDriver().findElement(selector).click();
     }
-
+    
     public String obterValueElemento(String id) {
         return getDriver().findElement(By.id(id)).getAttribute("value");
     }
@@ -183,7 +183,7 @@ public class BasePage {
 
     /************** Tabela *********************/
 
-    public void clicarBotaoTabela(String colunaBusca, String valor, String colunaBotao, String idTabela){
+    public void clicarBotaoTabela(String colunaBusca, String valor, String colunaBotao){
         //procurar coluna do registro
         WebElement tabela = getDriver().findElement(By.xpath("//*[@id='elementosForm:tableUsuarios']"));
         int idColuna = obterIndiceColuna(colunaBusca, tabela);

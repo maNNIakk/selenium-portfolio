@@ -230,4 +230,8 @@ public class BasePage {
         String urlAtual = getDriver().getCurrentUrl();
         Assertions.assertTrue(urlAtual.contains(expected));
     }
+
+    public int inutil(){
+         return 0;
+    }
 }

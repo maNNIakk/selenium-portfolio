@@ -1,6 +1,6 @@
 
-†
-java:S1104"dMake FECHAR_BROWSER_POR_TESTE a static final constant or non-public and provide accessors if needed.(·Í½ƒüÿÿÿÿ8¦ÆŸ½·1
+
+java:S1104"]Make BROWSER_POR_TESTE a static final constant or non-public and provide accessors if needed.(ùåüºÿÿÿÿÿ8Öâ£Â·1
 v
 java:S1104"TMake BASE_URL a static final constant or non-public and provide accessors if needed.(ä¶ü‘þÿÿÿÿ8·× ½·1
 w
@@ -8,8 +8,8 @@ java:S1104"ZMake BASE_DATA_PATH a static final constant or non-public and prov
 u
 java:S1104
 "SMake browser a static final constant or non-public and provide accessors if needed.(ÖÙà“üÿÿÿÿ8§ÆŸ½·1
-`
-java:S1444">Make this "public static FECHAR_BROWSER_POR_TESTE" field final(·Í½ƒüÿÿÿÿ8§ÆŸ½·1
+Y
+java:S1444"7Make this "public static BROWSER_POR_TESTE" field final(ùåüºÿÿÿÿÿ8×â£Â·1
 P
 java:S1444".Make this "public static BASE_URL" field final(ä¶ü‘þÿÿÿÿ8·× ½·1
 Q
@@ -17,8 +17,8 @@ java:S1444"4Make this "public static BASE_DATA_PATH" field final(«€ÝÆ8°ôš¾·1
 O
 java:S1444
 "-Make this "public static browser" field final(ÖÙà“üÿÿÿÿ8§ÆŸ½·1
-…
-java:S3008"cRename this field "FECHAR_BROWSER_POR_TESTE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·Í½ƒüÿÿÿÿ8¨ÆŸ½·1
+~
+java:S3008"\Rename this field "BROWSER_POR_TESTE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùåüºÿÿÿÿÿ8Øâ£Â·1
 u
 java:S3008"SRename this field "BASE_URL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ä¶ü‘þÿÿÿÿ8¹× ½·1
 v

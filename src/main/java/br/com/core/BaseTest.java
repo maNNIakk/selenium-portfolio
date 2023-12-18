@@ -18,10 +18,11 @@ import static br.com.core.DriverFactory.killDriver;
 public class BaseTest {
     protected static JsonObject jsonObject;
     protected static CustomCommands cmd;
+    protected static BasePage basePage;
     @BeforeAll
     public static void setupAll(){
          cmd = new CustomCommands();
-
+         basePage = new BasePage();
         try {
             String jsonFilePath = Propriedades.BASE_DATA_PATH;
             String jsonContent = Files.readString(Paths.get(jsonFilePath));
@@ -44,6 +45,9 @@ public class BaseTest {
     public void killDriverParaCadaTeste(TestInfo testInfo) throws IOException {
         TakesScreenshot ss = (TakesScreenshot) getDriver();
         File arquivo = ss.getScreenshotAs(OutputType.FILE);
+        File screenshotDir = new File("target" + File.separator + "screenshot");
+        if (!screenshotDir.exists()) {
+            screenshotDir.mkdirs();}
         FileUtils.copyFile(arquivo, new File("target" + File.separator + "screenshot" + File.separator + testInfo.getDisplayName() + ".jpg"));
         if(Propriedades.BROWSER_POR_TESTE) killDriver();
 

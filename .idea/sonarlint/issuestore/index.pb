@@ -8,8 +8,10 @@ W
 \
 ,src/main/java/br/com/core/DriverFactory.java,0\3\03e477ce8d028253410b78f760aadb9221bc2a88
 [
-+src/main/java/br/com/tests/TesteGoogle.java,1\a\1a00a3640256dbce28764d4886a26be818892dfe
-[
 +src/main/java/br/com/core/Propriedades.java,9\0\90c9bb25cfc0a0304738530904b4793eb7c40e70
 Z
 *src/main/java/br/com/tests/SeuBarriga.java,f\b\fbd12a6dbfb04bd45d487ddd75f82b3855bd29e7
+]
+-src/main/java/br/com/core/CustomCommands.java,a\d\adc230901d8ae43910da717cd62f3e389a7ff806
+[
++src/main/java/br/com/pages/TelaLoginPO.java,6\6\666bf22b84f0b0aea3a278811e8da31d4799a0f1

@@ -5,6 +5,7 @@ import static br.com.core.DriverFactory.getDriver;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -222,5 +223,11 @@ public class BasePage {
             }
         }
         return idColuna;
+    }
+    /************** Check URL Atual *********************/
+
+    public void checaUrlAtual(String expected){
+        String urlAtual = getDriver().getCurrentUrl();
+        Assertions.assertTrue(urlAtual.contains(expected));
     }
 }

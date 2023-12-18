@@ -1,5 +1,7 @@
 
 m
-java:S1301"KReplace this "switch" statement by "if" statements to increase readability.(ž®‡àøÿÿÿÿ8Ò‰ˆÄ¯1
+java:S1301"KReplace this "switch" statement by "if" statements to increase readability.(ž®‡àøÿÿÿÿ8Ò‰ˆÄ¯1
 f
-java:S2259"DA "NullPointerException" could be thrown; "driver" is nullable here.(…ç›¿ûÿÿÿÿ8Ù‰ˆÄ¯1
+java:S2259"DA "NullPointerException" could be thrown; "driver" is nullable here.(…ç›¿ûÿÿÿÿ8Òº´¹Ã1
+X	java:S125"<This block of commented-out lines of code should be removed.(†ÛÞâ8ËÜ³¹Ã1
+X	java:S125"<This block of commented-out lines of code should be removed.(áÛâ±8±Ôµ¹Ã1

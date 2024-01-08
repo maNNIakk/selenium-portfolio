@@ -2,6 +2,7 @@
   "email" : "renato.yancovit4@gmail.com",
   "senha" :  "teste321",
   "conta" : "conta criada",
+  "contaDeletar": "conta nao mexer",
   "contaAlt" : "conta alterada",
   "movimentacao": {
     "tipo" : "Receita",

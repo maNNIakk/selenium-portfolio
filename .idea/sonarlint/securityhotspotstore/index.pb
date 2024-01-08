@@ -15,3 +15,5 @@ Z
 -src/main/java/br/com/core/CustomCommands.java,a\d\adc230901d8ae43910da717cd62f3e389a7ff806
 [
 +src/main/java/br/com/pages/TelaLoginPO.java,6\6\666bf22b84f0b0aea3a278811e8da31d4799a0f1
+V
+&src/main/java/br/com/pages/HomePO.java,4\5\455faf91590c211ca134eadb8b17f9f67d636b63

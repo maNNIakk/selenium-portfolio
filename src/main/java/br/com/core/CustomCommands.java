@@ -90,5 +90,17 @@ public class CustomCommands {
         linhaProcurada.findElement(By.cssSelector("a[href*='/removerMovimentacao']")).click();
     }
 
+    public void removerConta(){
+        String conta = String.format("//td[text()='%s']",jsonObject.get("contaDeletar").getAsString());
+        By locatorNomeConta = By.xpath(conta);
+        By locatorConta = By.xpath("..//a[contains(@href, '/removerConta')]");
+
+        basePage.clicarBotao(By.className(HomePO.CONTAS_DROPDOWN_CLASS));
+        basePage.clicarBotao(By.xpath(HomePO.LISTAR_CONTA_LINK_X));
+        WebElement tdConta = getDriver().findElement(locatorNomeConta);
+        tdConta.findElement(locatorConta).click();
+        WebElement dangerText = getDriver().findElement(By.className("alert-danger"));
+        Assertions.assertTrue(dangerText.isDisplayed());
+    }
 
 }

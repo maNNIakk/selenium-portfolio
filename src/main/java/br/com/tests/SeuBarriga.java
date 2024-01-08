@@ -88,4 +88,12 @@ public class SeuBarriga extends BaseTest {
         cmd.removeMovimentacao();
     }
 
+    @Test
+    @Order(7)
+    @DisplayName("Remover conta com movimentação")
+    public void removeContaComMovimentacao(){
+        cmd.login();
+        cmd.removerConta();
+    }
+
 }

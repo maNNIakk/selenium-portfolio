@@ -2,7 +2,16 @@
   "email" : "renato.yancovit4@gmail.com",
   "senha" :  "teste321",
   "conta" : "conta criada",
-  "contaAlt" : "conta alterada"
+  "contaAlt" : "conta alterada",
+  "movimentacao": {
+    "tipo" : "Receita",
+    "descricao" : "Pagando o pula-pula das crianças",
+    "interessado" : "Peçanha",
+    "valor" : "12.345",
+    "situacao" : "status_pago"
+
+
+  }
 
 
 }

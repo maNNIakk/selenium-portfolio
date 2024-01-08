@@ -230,4 +230,6 @@ public class BasePage {
         String urlAtual = getDriver().getCurrentUrl();
         Assertions.assertTrue(urlAtual.contains(expected));
     }
+
+
 }

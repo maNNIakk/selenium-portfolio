@@ -103,4 +103,31 @@ public class CustomCommands {
         Assertions.assertTrue(dangerText.isDisplayed());
     }
 
+    public void verificaSaldo() {
+        String tituloAtual = getDriver().getTitle();
+        Assertions.assertTrue(tituloAtual.contains("Home"));
+
+        boolean accountFound = false;
+
+        for (WebElement row : getDriver().findElements(By.cssSelector("#tabelaSaldo tbody tr"))) {
+            String contaValue = row.findElement(By.cssSelector("td:first-child")).getText().trim();
+
+            if (contaValue.equals(jsonObject.get("contaAlt").getAsString())) {
+                accountFound = true;
+
+                String valor = row.findElement(By.cssSelector("td:nth-child(2)")).getText().trim();
+
+                double expectedValue = 12.35;
+                double actualValue = Double.parseDouble(valor);
+
+                Assertions.assertEquals(expectedValue, actualValue, 0.01); // Provide a delta for double comparison
+            }
+        }
+        // Check if the account was not found
+        if (!accountFound) {
+            System.out.println("Account not found");
+            Assertions.fail("Test failed because the account was not found");
+        }
+    }
+
 }

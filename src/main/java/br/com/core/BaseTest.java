@@ -37,6 +37,7 @@ public class BaseTest {
     @BeforeEach
     public void setupEach(){
         if(Propriedades.BROWSER_POR_TESTE) getDriver().get(Propriedades.BASE_URL);
+        cmd.login();
     }
 
 

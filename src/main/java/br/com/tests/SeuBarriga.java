@@ -19,14 +19,14 @@ public class SeuBarriga extends BaseTest {
     @Order(0)
     @DisplayName("Realiza Login")
     public void login() {
-        cmd.login();
+        
     }
 
     @Test
     @Order(1)
     @DisplayName("Cria Conta")
     public void criaConta(){
-        cmd.login();
+        
         cmd.cadastraNovaConta();
 
     }
@@ -35,7 +35,7 @@ public class SeuBarriga extends BaseTest {
     @Order(2)
     @DisplayName("Altera Conta")
     public void alteraConta(){
-        cmd.login();
+        
         cmd.alterarConta();
 
     }
@@ -44,7 +44,7 @@ public class SeuBarriga extends BaseTest {
     @Order(3)
     @DisplayName("Inserir Movimentação")
     public void insereMovimentacao(){
-        cmd.login();
+        
         cmd.inserirMovimentacao("Receita");
     }
 
@@ -52,7 +52,7 @@ public class SeuBarriga extends BaseTest {
     @Order(4)
     @DisplayName("Verifica campos obrigatórios da movimentação")
     public void verificaCamposObrigatorios(){
-        cmd.login();
+        
         cmd.verificaCamposObrigatoriosMovimentacao();
     }
 
@@ -60,7 +60,7 @@ public class SeuBarriga extends BaseTest {
     @Order(5)
     @DisplayName("Verifica o bloqueio de data de movimentações com datas futuras")
     public void bloqueiaTransacaoFutura(){
-        cmd.login();
+        
         basePage.clicarBotao(By.xpath("//a[contains(@href, '/movimentacao')]"));
         LocalDate weekAhead = LocalDate.now().plusDays(7);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -83,7 +83,7 @@ public class SeuBarriga extends BaseTest {
     @Order(6)
     @DisplayName("Remove Movimentação")
     public void removeMovimentacao(){
-        cmd.login();
+        
         cmd.inserirMovimentacao("Receita");
         cmd.removeMovimentacao();
     }
@@ -92,8 +92,17 @@ public class SeuBarriga extends BaseTest {
     @Order(7)
     @DisplayName("Remover conta com movimentação")
     public void removeContaComMovimentacao(){
-        cmd.login();
+        
         cmd.removerConta();
+    }
+
+    @Test
+    @Order(8)
+    @DisplayName("Saldo das contas")
+    public void verificaSaldoDasContas(){
+
+        
+        cmd.verificaSaldo();
     }
 
 }
